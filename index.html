@@ -1,191 +1,140 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Navya ❤️</title>  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #111;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<title>Just One Question 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 16px 0;
-      text-align: center;
-      font-size: 20px;
-      font-weight: 600;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(6px);
-      z-index: 10;
-    }
-    .navbar span { color: #e11d48; }
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffd6e8, #ffb6d5);
+  font-family: 'Segoe UI', sans-serif;
+  color: #b30059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    /* Center card */
-    .wrapper {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 80px;
-    }
+.container {
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-    .card {
-      text-align: center;
-      padding: 32px 24px 40px;
-      max-width: 520px;
-      width: 92%;
-      z-index: 2;
-    }
+h1 {
+  margin-top: 0;
+}
 
-    h1 {
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      margin-bottom: 28px;
-    }
+button {
+  margin: 10px;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #ff4d88;
+  color: white;
+  transition: transform 0.2s;
+}
 
-    .buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 10px;
-    }
+button:hover {
+  transform: scale(1.1);
+}
 
-    button {
-      padding: 12px 26px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.25s ease;
-    }
-    button:hover { background: #111; color: #fff; }
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: #ff4d88;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+}
 
-    .hidden { display: none; }
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-110vh); }
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-top: 24px;
-    }
+.big-heart {
+  font-size: 120px;
+  animation: pop 1.2s ease forwards;
+}
 
-    .soft {
-      opacity: 0.9;
-      font-size: 17px;
-    }
+@keyframes pop {
+  0% { transform: scale(0) rotateX(0deg); }
+  60% { transform: scale(1.2) rotateX(180deg); }
+  100% { transform: scale(1) rotateX(360deg); }
+}
+</style>
+</head>
 
-    .again {
-      margin-top: 18px;
-      font-size: 15px;
-      opacity: 0.7;
-    }
+<body>
 
-    /* Floating hearts */
-    .heart {
-      position: fixed;
-      bottom: -20px;
-      font-size: 20px;
-      color: #e11d48;
-      animation: floatUp linear forwards;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-110vh) scale(1.6);
-        opacity: 0;
-      }
-    }
-  </style></head>
-<body>  <!-- Navbar with names -->  <div class="navbar">Vatsal <span>❤️</span> Navya</div>  <!-- Background music -->  <!-- IMPORTANT: upload a file named "until-i-found-you.mp3" in this repo -->  <audio id="bgMusic" autoplay loop>
-    <source src="until-i-found-you.mp3" type="audio/mpeg" />
-  </audio>  <div class="wrapper">
-    <div class="card"><div id="question">
-    <h1>Navya, will you be my Valentine? ❤️</h1>
-    <div class="buttons">
-      <button id="yesBtn">Yes</button>
-      <button id="noBtn">No</button>
-    </div>
-  </div>
-
-  <div id="yesContent" class="hidden">
-    <h1>Thank you for choosing me ❤️</h1>
-    <p>
-      From the moment you came into my life, everything felt warmer and brighter.
-      I may not be perfect, but my feelings for you are real and pure.
-      I promise to respect you, care for you, and always stand by you.
-      This is just the beginning of our story.
-    </p>
-  </div>
-
-  <div id="noContent" class="hidden">
-    <h1>That’s okay 💭</h1>
-    <p class="soft">
-      Take your time. Think again. Sometimes the heart needs a little more time.
-      Whenever you’re ready, come back and decide again.
-    </p>
-    <div class="again">I’ll be right here.</div>
-    <div class="buttons" style="margin-top:22px;">
-      <button id="backBtn">Go Back</button>
-    </div>
-  </div>
-
+<div class="container" id="app">
+  <h1>Are you still angry? 💗</h1>
+  <button onclick="notAngry()">No</button>
+  <button onclick="stillAngry()">Yes</button>
 </div>
 
-  </div>  <script>
-    const question = document.getElementById('question');
-    const yesContent = document.getElementById('yesContent');
-    const noContent = document.getElementById('noContent');
+<script>
+function createHearts(count = 25) {
+  for (let i = 0; i < count; i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(h);
+  }
+}
+createHearts();
 
-    document.getElementById('yesBtn').onclick = () => {
-      question.classList.add('hidden');
-      noContent.classList.add('hidden');
-      yesContent.classList.remove('hidden');
-      startHearts();
-      playMusic();
-    };
+function notAngry() {
+  document.getElementById("app").innerHTML = `
+    <h1>Thank you 💗</h1>
+    <p>
+      Thank you for telling me that you’re not angry anymore.
+      I honestly feel lighter knowing that. I am really sorry for
+      what I did last time. I never wanted to hurt you or make you
+      feel ignored or uncomfortable in any way. Sometimes I mess
+      things up without realizing it, but that doesn’t mean I don’t
+      care. I do care, a lot. And I’ll try my best to be more careful
+      next time.
+    </p>
+  `;
+}
 
-    document.getElementById('noBtn').onclick = () => {
-      question.classList.add('hidden');
-      yesContent.classList.add('hidden');
-      noContent.classList.remove('hidden');
-    };
+function stillAngry() {
+  document.getElementById("app").innerHTML = `
+    <h1>Please read this 💗</h1>
+    <p>
+      I know you’re still upset, and honestly, I understand why.
+      What I did wasn’t right, and I shouldn’t have handled things
+      that way. I’ve been thinking about it again and again, and I
+      realize how careless I was with my words and actions. I never
+      meant to make you feel bad or unimportant. You matter to me,
+      and losing your smile because of me hurts more than I can say.
+      I am really sorry from my heart, and I promise I’ll be better.
+    </p>
+    <p><b>Now, are you not upset with me?</b></p>
+    <button onclick="forgiven()">Yes</button>
+  `;
+}
 
-    document.getElementById('backBtn').onclick = () => {
-      noContent.classList.add('hidden');
-      question.classList.remove('hidden');
-    };
+function forgiven() {
+  document.getElementById("app").innerHTML = `
+    <div class="big-heart">❤️</div>
+    <h2>Thank you for understanding 💗</h2>
+  `;
+}
+</script>
 
-    function startHearts() {
-      setInterval(() => {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.innerText = '❤️';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (4 + Math.random() * 3) + 's';
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 7000);
-      }, 300);
-    }
-
-    function playMusic() {
-      const music = document.getElementById('bgMusic');
-      music.volume = 0.6;
-      music.play().catch(() => {});
-    }
-  </script></body>
+</body>
 </html>
