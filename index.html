@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Just One Question 💗</title>
+<title>For Nandini 💗</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -20,11 +20,11 @@ body {
 
 .container {
   text-align: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.88);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 22px;
   width: 90%;
-  max-width: 420px;
+  max-width: 430px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -34,7 +34,7 @@ h1 {
 
 button {
   margin: 10px;
-  padding: 12px 28px;
+  padding: 12px 30px;
   font-size: 16px;
   border: none;
   border-radius: 30px;
@@ -64,27 +64,32 @@ button:hover {
 
 .big-heart {
   font-size: 120px;
-  animation: pop 1.2s ease forwards;
+  animation: pop 1.3s ease forwards;
 }
 
 @keyframes pop {
-  0% { transform: scale(0) rotateX(0deg); }
-  60% { transform: scale(1.2) rotateX(180deg); }
-  100% { transform: scale(1) rotateX(360deg); }
+  0% { transform: scale(0); }
+  70% { transform: scale(1.25); }
+  100% { transform: scale(1); }
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container" id="app">
-  <h1>Are you still angry? 💗</h1>
+  <h1>Nandini, are you still angry? 💗</h1>
   <button onclick="notAngry()">No</button>
   <button onclick="stillAngry()">Yes</button>
 </div>
 
 <script>
-function createHearts(count = 25) {
+function createHearts(count = 30) {
   for (let i = 0; i < count; i++) {
     const h = document.createElement("div");
     h.className = "heart";
@@ -98,30 +103,29 @@ createHearts();
 
 function notAngry() {
   document.getElementById("app").innerHTML = `
-    <h1>Thank you 💗</h1>
+    <h1>Thank you, Nandini 💗</h1>
     <p>
       Thank you for telling me that you’re not angry anymore.
-      I honestly feel lighter knowing that. I am really sorry for
-      what I did last time. I never wanted to hurt you or make you
-      feel ignored or uncomfortable in any way. Sometimes I mess
-      things up without realizing it, but that doesn’t mean I don’t
-      care. I do care, a lot. And I’ll try my best to be more careful
-      next time.
+      It honestly means more to me than you might think.
+      I am really sorry for what I did last time. I never wanted
+      to hurt you or make you feel uncomfortable. I know I made
+      a mistake, and I accept it. You matter to me, Nandini,
+      and I’ll genuinely try to never repeat this again.
     </p>
   `;
 }
 
 function stillAngry() {
   document.getElementById("app").innerHTML = `
-    <h1>Please read this 💗</h1>
+    <h1>Please read this, Nandini 💗</h1>
     <p>
-      I know you’re still upset, and honestly, I understand why.
-      What I did wasn’t right, and I shouldn’t have handled things
-      that way. I’ve been thinking about it again and again, and I
-      realize how careless I was with my words and actions. I never
-      meant to make you feel bad or unimportant. You matter to me,
-      and losing your smile because of me hurts more than I can say.
-      I am really sorry from my heart, and I promise I’ll be better.
+      I know you’re still upset, and I don’t blame you at all.
+      What I did wasn’t right, and I’ve had enough time to
+      understand that. I was careless, and I didn’t think
+      about how my actions might affect you. That’s on me.
+      You never deserved that kind of behavior from my side.
+      I’m genuinely sorry, Nandini. I won’t say I’m perfect,
+      but I promise I’ll be more thoughtful and respectful.
     </p>
     <p><b>Now, are you not upset with me?</b></p>
     <button onclick="forgiven()">Yes</button>
@@ -131,7 +135,7 @@ function stillAngry() {
 function forgiven() {
   document.getElementById("app").innerHTML = `
     <div class="big-heart">❤️</div>
-    <h2>Thank you for understanding 💗</h2>
+    <h2>Thank you for understanding, Nandini 💗</h2>
   `;
 }
 </script>
