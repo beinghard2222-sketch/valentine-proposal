@@ -1,22 +1,47 @@
-<h1>For - ❤️</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Ahana ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      padding-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    #yesBtn { background-color: #ff4d6d; color: white; }
+    #noBtn { background-color: gray; color: white; }
+  </style>
+</head>
+<body>
 
-<p>
-From the moment you came into my life, everything started feeling special.
-I don’t know how, I don’t know when,
-but slowly you became the most beautiful part of my world.
-</p>
+  <h1>Ahana 💖</h1>
+  <h2>Will you be mine forever?</h2>
 
-<p>
-Every smile of yours gives me peace,
-every word of yours feels like magic.
-You are not just someone special,
-you are my favorite feeling.
-</p>
+  <button id="yesBtn" onclick="yesClicked()">Yes 💕</button>
+  <button id="noBtn" onclick="noClicked()">No 😢</button>
 
-<p>
-No matter what happens,
-one thing will always stay the same —
-You will always have a special place in my heart, - ❤️
-</p>
+  <h3 id="response"></h3>
 
-<h2>Forever Yours 💕</h2></html>
+  <script>
+    function yesClicked() {
+      document.getElementById("response").innerHTML =
+      "You just made me the happiest person alive, Ahana ❤️✨ I promise to cherish you forever!";
+    }
+
+    function noClicked() {
+      document.getElementById("response").innerHTML =
+      "Are you sure Ahana? 🥺 Try clicking Yes once... my heart depends on it 💔";
+    }
+  </script>
+
+</body>
+</html>
