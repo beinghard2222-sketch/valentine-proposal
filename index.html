@@ -1,141 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>For Ahana 💗</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ahana ❤️</title>
 
-<style>
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #ffd6e8, #ffb6d5);
-  font-family: 'Segoe UI', sans-serif;
-  color: #b30059;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #111;
+      overflow-x: hidden;
+    }
 
-.container {
-  text-align: center;
-  background: rgba(255,255,255,0.88);
-  padding: 30px;
-  border-radius: 22px;
-  width: 90%;
-  max-width: 430px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+    .navbar span { color: #e11d48; }
 
-h1 {
-  margin-top: 0;
-}
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+    }
 
-button {
-  margin: 10px;
-  padding: 12px 30px;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: #ff4d88;
-  color: white;
-  transition: transform 0.2s;
-}
+    .card {
+      text-align: center;
+      padding: 32px 24px 40px;
+      max-width: 520px;
+      width: 92%;
+      z-index: 2;
+    }
 
-button:hover {
-  transform: scale(1.1);
-}
+    h1 {
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      margin-bottom: 28px;
+    }
 
-.heart {
-  position: fixed;
-  bottom: -20px;
-  color: #ff4d88;
-  font-size: 18px;
-  animation: floatUp 6s linear infinite;
-  opacity: 0.8;
-}
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 10px;
+    }
 
-@keyframes floatUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-110vh); }
-}
+    button {
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.25s ease;
+    }
+    button:hover { background: #111; color: #fff; }
 
-.big-heart {
-  font-size: 120px;
-  animation: pop 1.3s ease forwards;
-}
+    .hidden { display: none; }
 
-@keyframes pop {
-  0% { transform: scale(0); }
-  70% { transform: scale(1.25); }
-  100% { transform: scale(1); }
-}
-</style>
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 24px;
+    }
+
+    .soft {
+      opacity: 0.9;
+      font-size: 17px;
+    }
+
+    .again {
+      margin-top: 18px;
+      font-size: 15px;
+      opacity: 0.7;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      color: #e11d48;
+      animation: floatUp linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh) scale(1.6);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<audio autoplay loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
+  <div class="navbar">Vatsal <span>❤️</span> Ahana</div>
 
-<div class="container" id="app">
-  <h1>Ahana, are you still angry? 💗</h1>
-  <button onclick="notAngry()">No</button>
-  <button onclick="stillAngry()">Yes</button>
-</div>
+  <audio id="bgMusic" autoplay loop>
+    <source src="until-i-found-you.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="wrapper">
+    <div class="card">
+
+      <div id="question">
+        <h1>Ahana, will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+          <button id="yesBtn">Yes</button>
+          <button id="noBtn">No</button>
+        </div>
+      </div>
+
+      <div id="yesContent" class="hidden">
+        <h1>Thank you for choosing me ❤️</h1>
+        <p>
+          From the moment you came into my life, everything felt warmer and brighter.
+          I may not be perfect, but my feelings for you are real and pure.
+          I promise to respect you, care for you, and always stand by you.
+          This is just the beginning of our story.
+        </p>
+      </div>
+
+      <div id="noContent" class="hidden">
+        <h1>That’s okay 💭</h1>
+        <p class="soft">
+          Take your time. Think again. Sometimes the heart needs a little more time.
+          Whenever you’re ready, come back and decide again.
+        </p>
+        <div class="again">I’ll be right here.</div>
+        <div class="buttons" style="margin-top:22px;">
+          <button id="backBtn">Go Back</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 <script>
-function createHearts(count = 30) {
-  for (let i = 0; i < count; i++) {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.innerHTML = "❤️";
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.animationDuration = (4 + Math.random() * 4) + "s";
-    document.body.appendChild(h);
-  }
-}
-createHearts();
+const question = document.getElementById('question');
+const yesContent = document.getElementById('yesContent');
+const noContent = document.getElementById('noContent');
 
-function notAngry() {
-  document.getElementById("app").innerHTML = `
-    <h1>Thank you, Ahana 💗</h1>
-    <p>
-      Thank you for telling me that you’re not angry anymore.
-      It honestly means more to me than you might think.
-      I am really sorry for what I did last time. I never wanted
-      to hurt you or make you feel uncomfortable. I know I made
-      a mistake, and I accept it. You matter to me, Ahana,
-      and I’ll genuinely try to never repeat this again.
-    </p>
-  `;
-}
+document.getElementById('yesBtn').onclick = () => {
+  question.classList.add('hidden');
+  noContent.classList.add('hidden');
+  yesContent.classList.remove('hidden');
+  startHearts();
+  playMusic();
+};
 
-function stillAngry() {
-  document.getElementById("app").innerHTML = `
-    <h1>Please read this, Ahana 💗</h1>
-    <p>
-      I know you’re still upset, and I don’t blame you at all.
-      What I did wasn’t right, and I’ve had enough time to
-      understand that. I was careless, and I didn’t think
-      about how my actions might affect you. That’s on me.
-      You never deserved that kind of behavior from my side.
-      I’m genuinely sorry, Ahana. I won’t say I’m perfect,
-      but I promise I’ll be more thoughtful and respectful.
-    </p>
-    <p><b>Now, are you not upset with me?</b></p>
-    <button onclick="forgiven()">Yes</button>
-  `;
+document.getElementById('noBtn').onclick = () => {
+  question.classList.add('hidden');
+  yesContent.classList.add('hidden');
+  noContent.classList.remove('hidden');
+};
+
+document.getElementById('backBtn').onclick = () => {
+  noContent.classList.add('hidden');
+  question.classList.remove('hidden');
+};
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }, 300);
 }
 
-function forgiven() {
-  document.getElementById("app").innerHTML = `
-    <div class="big-heart">❤️</div>
-    <h2>Thank you for understanding, Ahana 💗</h2>
-  `;
+function playMusic() {
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.6;
+  music.play().catch(() => {});
 }
 </script>
 
